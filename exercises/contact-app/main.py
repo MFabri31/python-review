@@ -7,7 +7,7 @@ os.system('cls')
 contacts = [
     {
        "id":1, 
-       "name":"contact example", 
+       "name":"user1", 
        "phone":"123245678", 
     }
 ]
@@ -39,7 +39,24 @@ def list_contacts():
     
 def search_contact():
     print('Buscar contacto: ')
-    pass
+    search_term = input('Nombre: >')
+    
+    contact_founded = None
+    
+    for contact in contacts:
+        print("=================")
+        for v in contact.values():
+            if v == search_term:
+                contact_founded = contact
+                
+    if contact_founded != None:
+        for k,v in contact.items():
+            print(k,v)
+    else:
+        print("Contacto no encontrado")
+        
+    
+    
 
 def delete_contact():
     print('Eliminar contacto: ')
