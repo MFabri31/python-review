@@ -34,9 +34,7 @@ def list_contacts():
         for k,v in contact.items():
             print(k,v)
             
- 
-        
-    
+     
 def search_contact():
     print('Buscar contacto: ')
     search_term = input('Nombre: >')
@@ -56,11 +54,23 @@ def search_contact():
         print("Contacto no encontrado")
         
     
-    
-
 def delete_contact():
     print('Eliminar contacto: ')
-    pass
+    search_term = input('Nombre: >')
+    
+    contact_founded = None
+    
+    for contact in contacts:
+        print("=================")
+        for v in contact.values():
+            if v == search_term:
+                contact_founded = contact
+   
+    if contact_founded != None:
+        contacts.remove(contact_founded)
+        print("Contacto eliminado")
+    else:
+        print("Contacto no encontrado")
 
 def exit():
     print('Saliendo... ')
