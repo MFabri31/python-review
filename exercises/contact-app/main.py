@@ -27,8 +27,16 @@ def add_contact():
     contacts.append(new_contact)
 
 def list_contacts():
-    print('Listar contactos: ')
-
+    
+    print('===== Lista de contactos =====')
+    for contact in contacts:
+        print("=================")
+        for k,v in contact.items():
+            print(k,v)
+            
+ 
+        
+    
 def search_contact():
     print('Buscar contacto: ')
     pass
